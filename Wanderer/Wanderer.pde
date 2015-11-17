@@ -2,6 +2,7 @@
 float diam;
 PVector[] loc = new PVector [40];
 PVector[] vel = new PVector [40];
+PVector[] acc = new PVector [40];
 
 void setup() {
   //set size of canvas
@@ -12,31 +13,33 @@ void setup() {
     diam = 50;
     vel[i] = PVector.random2D();
     vel[i].mult(10);
+    acc[i]= PVector.random2D();
+    acc[i].mult(.5);
   }
 }
 
 void draw() {
   //draw background to cover previous frame
-  background(236,219,188);
+  background(0);
 
   for (int i=0; i<40; i++) {
     //add aesthetic
     strokeWeight(15);
     noFill();
     if (i<8) {
-      stroke(255,230,234,400);
+      stroke(255,230,234,50);
     }
     else if (i<16) {
-      stroke(240,240,240,400);
+      stroke(240,240,240,50);
     }
     else if (i<24) {
-      stroke(223,247,246,400);
+      stroke(223,247,246,50);
     }
     else if (i<32) {
-      stroke(161,227,224,400);
+      stroke(161,227,224,50);
     }
     else if (i<40) {
-      stroke(120,191,188,400);
+      stroke(120,191,188,50);
     }
     
     //draw ball
