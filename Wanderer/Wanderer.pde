@@ -11,8 +11,7 @@ void setup() {
     //initialize variables
     loc[i] = new PVector(width/2,height/2);
     diam = 50;
-    vel[i] = PVector.random2D();
-    vel[i].mult(10);
+    vel[i] = new PVector(0,0);
     acc[i]= PVector.random2D();
     acc[i].mult(.5);
   }
@@ -46,7 +45,8 @@ void draw() {
     ellipse(loc[i].x, loc[i].y, diam, diam);
   
     //add vel[i]oc[i]ity to position
-    loc[i].add(vel[i]);
+    acc[i]= PVector.random2D();
+    acc[i].mult(.5);
   
     //wrap the ball's position
     if (loc[i].x + diam/2 >= width) {
